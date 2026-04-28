@@ -16,6 +16,7 @@ import { truncateText } from '@/utils/utils'
 const props = defineProps({
     book: {type: Object as () => Book, required: true},
     score: {type: String, required: false},
+    predicted_rating: {type: String, required: false},
 })
 
 console.log('BookItem props:', props.book)
@@ -37,6 +38,7 @@ console.log('BookItem props:', props.book)
       <CardTitle class="mb-4">{{ truncateText(props.book.title, 30) }}</CardTitle>
       <CardDescription>
         <span class="font-semibold">{{truncateText(props.book.author_name, 30) }}</span> 
+        <p v-if="props.predicted_rating" class="text-sm text-gray-500 mt-1">Predicted rating: {{ props.predicted_rating }}</p>
         <p v-if="props.score" class="text-sm text-gray-500 mt-1">Score: {{ props.score }}</p>
       </CardDescription>
     </CardContent>

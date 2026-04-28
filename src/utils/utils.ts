@@ -1,4 +1,4 @@
-export const truncateNumber = (num: number, decimals: number = 2): string => {
+export const truncateNumber = (num: number | null | undefined, decimals: number = 2): string => {
   if (num === null || num === undefined) return 'N/A'
   const factor = Math.pow(10, decimals)
   return (Math.round(num * factor) / factor).toFixed(decimals)
