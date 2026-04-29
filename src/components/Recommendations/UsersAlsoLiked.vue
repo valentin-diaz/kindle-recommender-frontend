@@ -41,7 +41,7 @@ watch(() => props.book, () => {
 
 <template>
     <Container>
-        <h2 class="text-4xl font-bold text-center mb-4">A los usuarios que les gustó {{ props.book.title }}, también les gustó...</h2>
+        <h2 class="text-4xl font-bold text-center mb-6">Users who liked {{ props.book.title }}, also liked...</h2>
 
         <div v-if="booksState.isLoading" class="text-center text-gray-500">Cargando recomendaciones...</div>
         <div v-else-if="booksState.recommendations.length === 0" class="text-center text-gray-500">No se encontraron recomendaciones similares.</div>

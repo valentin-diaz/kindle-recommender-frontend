@@ -6,6 +6,8 @@ import { useRoute } from 'vue-router';
 import Container from '@/components/Container.vue';
 import { Separator } from '@/components/ui/separator'
 import SimilarBooksCarousel from '@/components/SimilarBooksCarousel.vue';
+import UsersAlsoLiked from '@/components/Recommendations/UsersAlsoLiked.vue';
+import SimilarsContent from '@/components/Recommendations/SimilarsContent.vue';
 
 
 const route = useRoute()
@@ -53,6 +55,9 @@ watchEffect(async () => {
         </div>
         <p v-else class="text-center text-gray-500">Cargando detalles del libro...</p>
 
-        <SimilarBooksCarousel v-if="book" :bookId="book.id"/>
+        <!-- <SimilarBooksCarousel v-if="book" :bookId="book.id"/> -->
+        
     </Container>
+    <UsersAlsoLiked v-if="book" :book="book"/>
+    <SimilarsContent v-if="book" :book="book"/>
 </template>

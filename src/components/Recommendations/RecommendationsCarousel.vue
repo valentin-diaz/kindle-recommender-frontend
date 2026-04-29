@@ -23,7 +23,7 @@ const props = defineProps<{
     }"
   >
     <CarouselContent class="ml-0">
-        <CarouselItem v-for="(recommendation, index) in recommendations" :key="recommendation.book.id" class="pl-2 basis-1/2 sm:basis-1/3">
+        <CarouselItem v-for="(recommendation, index) in recommendations" :key="recommendation.book.id" class="pl-2 basis-1/2 sm:basis-1/3 md:basis-1/4">
             <BookItem 
               :book="recommendation.book" 
               :predicted_rating="truncateNumber(recommendation.predicted_rating, 2)" class="min-w-100"

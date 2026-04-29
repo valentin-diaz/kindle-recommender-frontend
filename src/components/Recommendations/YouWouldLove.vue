@@ -39,7 +39,7 @@ onMounted(() => {
 
 <template>
     <Container>
-        <h2 class="text-4xl font-bold text-center mb-4">Podrían gustarte...</h2>
+        <h2 class="text-4xl font-bold text-center mb-6">You may also like</h2>
 
         <div v-if="booksState.isLoading" class="text-center text-gray-500">Cargando recomendaciones...</div>
         <div v-else-if="booksState.recommendations.length === 0" class="text-center text-gray-500">No se encontraron recomendaciones similares.</div>
