@@ -87,3 +87,13 @@ export const getSimilarBooksImplicit = async (bookId: string) => {
     throw error
   }
 }
+
+export const getSimilarBooksContentBased = async (bookId: string) => {
+  try {
+    const response = await client.get(`/recommendations/similars-content/${bookId}`)
+    return response.data
+  } catch (error) {
+    console.error('Error fetching similar books:', error)
+    throw error
+  }
+}

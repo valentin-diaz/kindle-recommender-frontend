@@ -7,6 +7,7 @@ import { onMounted, ref, watchEffect, reactive } from 'vue';
 import { getUser } from '@/services/api';
 import type { UserType } from '@/types/api/user';
 import UsersAlsoLiked from '@/components/Recommendations/UsersAlsoLiked.vue';
+import SimilarsContent from '@/components/Recommendations/SimilarsContent.vue';
 
 
 const route = useRoute()
@@ -29,9 +30,9 @@ const fetchUser = async (id: string) => {
     }
 }
 
-const getUserFavoriteBook = () => {
+const getUserFavoriteBook = (position: number = 0) => {
     if (userState.user.top_books && userState.user.top_books.length > 0) {
-        return userState.user.top_books[0]; // Tomamos el primer libro favorito
+        return userState.user.top_books[position];
     }
     return null;
 }
@@ -55,7 +56,8 @@ watchEffect(async () => {
             <Separator class="my-0" />
         </Container>
         <YouWouldLove :user-id="route.params.id as string" />
-        <UsersAlsoLiked v-if="getUserFavoriteBook()" :book="getUserFavoriteBook()!" />
+        <UsersAlsoLiked v-if="getUserFavoriteBook()" :book="getUserFavoriteBook(0)!" />
+        <SimilarsContent v-if="getUserFavoriteBook(1)" :book="getUserFavoriteBook(1)!" />
     </main>
 
     

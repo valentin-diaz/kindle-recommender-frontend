@@ -1,5 +1,5 @@
 export const truncateNumber = (num: number | null | undefined, decimals: number = 2): string => {
-  if (num === null || num === undefined) return 'N/A'
+  if (num === null || num === undefined) return ''
   const factor = Math.pow(10, decimals)
   return (Math.round(num * factor) / factor).toFixed(decimals)
 }

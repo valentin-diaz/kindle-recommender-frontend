@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getSimilarBooksImplicit } from '@/services/api';
+import { getSimilarBooksContentBased } from '@/services/api';
 import Container from '../Container.vue';
 import { onMounted, watch ,reactive } from 'vue';
 import type { Book } from '@/types/api/book';
@@ -18,10 +18,10 @@ const booksState = reactive({
 
 const fetchSimilarBooks = async () => {
     try {
-        const response = await getSimilarBooksImplicit(props.book.id);
+        const response = await getSimilarBooksContentBased(props.book.id);
         booksState.recommendations = response.similar_books; // Asumiendo que la respuesta tiene una propiedad 'data' con las recomendaciones
         booksState.isLoading = false;
-        console.log('Similar books fetched:', booksState.recommendations);
+        console.log('Similar Content Based books fetched:', booksState.recommendations);
     } catch (error) {
         console.error('Error fetching similar books:', error);
     } finally {
@@ -30,10 +30,6 @@ const fetchSimilarBooks = async () => {
 };
 
 onMounted(() => {
-    fetchSimilarBooks();
-});
-
-watch(() => props.book, () => {
     fetchSimilarBooks();
 });
 

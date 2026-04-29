@@ -14,7 +14,6 @@ onMounted(async () => {
   const response = await getFeaturedBooks();
   booksState.books = response.data;
   booksState.isLoading = false;
-  console.log(booksState.books);
 });
 
 </script>
