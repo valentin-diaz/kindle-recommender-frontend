@@ -17,11 +17,10 @@ import SearchBar from './SearchBar.vue';
                 <RouterLink to="/">Kindle Recommender</RouterLink>
             </h1>
         </div>
-        <div class="flex-2 flex items-center justify-center flex-col gap-y-2">
+        <div class="flex-2 flex items-end justify-end flex-col gap-y-2">
             <!-- <SearchBar /> -->
             <Navbar />
         </div>
-        <div class="flex-1 text-center place-content-center">Perfil</div>
         </div>
         
     </Container>

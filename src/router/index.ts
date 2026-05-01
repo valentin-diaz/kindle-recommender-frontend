@@ -1,6 +1,7 @@
 import BookView from '@/views/BookView.vue'
 import CatalogView from '@/views/CatalogView.vue'
 import LandingView from '@/views/LandingView.vue'
+import NewUserSelectionView from '@/views/NewUserSelectionView.vue'
 import UserRecommendationsView from '@/views/UserRecommendationsView.vue'
 import UserSelectionView from '@/views/UserSelectionView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/books/:id',
       name: 'book-details',
       component: BookView,
+    },
+    {
+      path: '/select-ratings',
+      name: 'select-ratings',
+      component: NewUserSelectionView,
     }
   ],
 })

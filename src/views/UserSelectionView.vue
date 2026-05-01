@@ -6,6 +6,9 @@ import type { UserType } from '@/types/api/user'
 import Container from '@/components/Container.vue'
 import { getUsers } from '@/services/api'
 import Input from '@/components/ui/input/Input.vue'
+import { Button } from '@/components/ui/button'
+import { RouterLink } from 'vue-router'
+import Separator from '@/components/ui/separator/Separator.vue'
 
 // Datos mockeados para probar la estructura base
 const data = ref<UserType[]>([])
@@ -65,6 +68,17 @@ onMounted(() => {
     <p class="text-center text-muted-foreground mb-2">
       Selecciona un usuario para ver las recomendaciones personalizadas basadas en su historial de compras.
     </p>
+    <Separator class="my-4" />
+    <div class="flex justify-center flex-col items-center gap-2">
+      <p class="text-center text-muted-foreground mb-2">
+      Or simulate recommendations for a new user:
+    </p>
+    <Button variant="default" as-child>
+      <RouterLink to="/select-ratings">
+        New user
+      </RouterLink>
+    </Button>
+    </div>
     <div class="mx-auto">
     <div class="flex items-center justify-between py-4">
       <Input

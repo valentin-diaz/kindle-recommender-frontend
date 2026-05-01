@@ -18,18 +18,18 @@ import { RouterLink } from 'vue-router';
             <NavigationMenuList>
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                    <RouterLink to="/select-user">Recomendaciones</RouterLink>
+                    <RouterLink to="/select-user">Recommendations</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                    <RouterLink to="/catalog">Libros</RouterLink>
+                    <RouterLink to="/catalog">Book catalog</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
                 <NavigationMenuLink as-child :class="navigationMenuTriggerStyle()">
-                    <RouterLink to="/vender">Referencias</RouterLink>
+                    <RouterLink to="/vender">About the data</RouterLink>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             </NavigationMenuList>
